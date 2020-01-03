@@ -1,1 +1,1 @@
-
+Polysemy means that a feature can have one of many meanings. This can be done using labels derived from annotations, but we can also use more sophisticated labels derived from beliefs and cultural values.
