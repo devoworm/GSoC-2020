@@ -10,4 +10,4 @@ For input data, check out the [Devozoo](https://devoworm.github.io/devozoo.htm).
 
 Application deadline is March 31  [schedule](https://summerofcode.withgoogle.com/)
 
-Community Period starts May 6!
+Community Period starts May 5! Join us at our group meeting on May 11 to meet our new students! Also be on the lookout for events in the OpenWorm Slack team!
