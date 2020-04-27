@@ -9,3 +9,5 @@ GSoC 2020 project idea 15: OpenDevoCell Integration [link](https://neurostars.or
 For input data, check out the [Devozoo](https://devoworm.github.io/devozoo.htm). Be sure to join the [OpenWorm Slack channel](https://launchpass.com/openworm) and join channels #devoworm and #devowormml.
 
 Application deadline is March 31  [schedule](https://summerofcode.withgoogle.com/)
+
+Community Period starts May 6!
