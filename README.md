@@ -13,3 +13,5 @@ Application deadline is March 31  [schedule](https://summerofcode.withgoogle.com
 Welcome to the Summer [Mayukh Deb](https://github.com/Mayukhdeb) (Project 14) and [Ujjwal Singh](https://github.com/ujjwalll) (Project 15)!
 
 Community Period starts May 5! Join us at our [group meeting](https://tiny.cc/DevoWorm) on May 11 (2pm UTC) to meet our new students! Also be on the lookout for events in the OpenWorm Slack team!
+
+For more casual interactions, join us for our [weekly Hackathon](https://meet.google.com/yvy-uxsw-uno), Fridays at 4pm UTC.
