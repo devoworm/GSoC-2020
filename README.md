@@ -14,4 +14,4 @@ Welcome to the Summer [Mayukh Deb](https://github.com/Mayukhdeb) (Project 14) an
 
 Community Period starts May 5! Join us at our [group meeting](https://tiny.cc/DevoWorm) on May 11 (2pm UTC) to meet our new students! Also be on the lookout for events in the OpenWorm Slack team!
 
-For more casual interactions, join us for our [weekly Hackathon](https://meet.google.com/yvy-uxsw-uno), Fridays at 4pm UTC.
+For more casual interactions, join us for our [weekly Hackathon/Coffee Hour](https://meet.google.com/yvy-uxsw-uno), Fridays at 4pm UTC.
