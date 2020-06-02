@@ -1,4 +1,4 @@
-## Google Summer of Code 2020
+### Google Summer of Code 2020
 
 ### Check out our two projects at INCF Neurostars!
 
