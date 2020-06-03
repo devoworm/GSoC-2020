@@ -1,0 +1,41 @@
+/* --------------------------------- */
+/* Css Styles                        */
+/*---------------------------------- */
+
+
+.home .home-content .hero-title span, .widget-twitter a, footer .social a:hover, .full-menu .full-inner nav ul li a:hover, .full-menu .full-inner .full-contact ul li.title, .full-menu .full-inner .full-contact ul li .social a:hover, .home .home-content .social a:hover i, .titlebar .page-title span, .news-box small, .news-list:hover .news-box .title, .news-article .category, .article-comments .comment-content .reply, .widgets-title, .widget-latest-news ul li a:hover p, .widget-categories ul li a:hover{
+    color: #ea0026;
+}
+
+.full-open .nav-icon:hover span, .owl-carousel.work-areas .area .line, .owl-theme .owl-controls .owl-page.active span, .site-btn2:hover{
+	background: #ea0026 !important;
+}
+
+.cbp-l-loadMore-link{
+    border: solid 2px #ea0026 !important;
+
+}
+
+footer{
+    border-bottom: solid 6px #ea0026;
+}
+
+input.inp:focus, textarea.form-message:focus{
+	border-color: #ea0026;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
