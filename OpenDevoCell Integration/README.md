@@ -13,3 +13,8 @@ These improvements are meant to increase participation in our open science initi
 The Below diagram is the main flow for how the user is going to interact with the OpenDevocell Portal.
 
 ![alt text](https://github.com/ujjwalll/GSoC-2020/blob/master/OpenDevoCell%20Integration/Images_Readme/OpenDevoCell_UML.png?raw=true)
+
+## Splash page for OpenDevoCell
+<p align="center"> 
+<img src="https://github.com/devoworm/GSoC-2020/blob/master/OpenDevoCell%20Integration/Images_Readme/DEMO.gif" width="1000" height="500">
+</p>
