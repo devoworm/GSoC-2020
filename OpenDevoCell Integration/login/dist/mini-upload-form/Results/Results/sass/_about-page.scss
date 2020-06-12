@@ -1,0 +1,126 @@
+/*------------------
+   About page
+ ------------------*/
+ .page-top-section {
+    padding: 0 40px;
+ }
+ .page-top-warp {
+     height: 500px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     h2 {
+        font-size: 80px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 15px;
+        @media #{$tab_device,$large_mobile} {
+            font-size: 60px;
+        }
+        @media #{$small_mobile} {
+            font-size: 40px;
+        }
+     }
+     p{
+         font-size: 18px;
+         padding-right: 50px;
+         @media #{$large_mobile,$small_mobile} {
+            padding-right: 0;
+        }
+     }
+ }
+
+ .about-section {
+     padding-top: 82px;
+ }
+
+ .about-item {
+    margin-bottom: 55px;
+    .ai-text {
+        padding-left: 70px;
+        @media #{$tab_device,$large_mobile,$small_mobile} {
+            padding-left: 0;
+        }
+    }
+    h2 {
+        color: $white_color;
+        margin-bottom: 40px;
+    }
+    h4 {
+        color: $white_color;
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    p {
+        font-size: 16px;
+    }
+ }
+.team-item{
+    position: relative;
+    overflow: hidden;
+    img {
+        min-width: 100%;
+    }
+    &:hover {
+        .team-meta {
+            height: 100%;
+            background: rgba(19, 29, 220, 0.7);
+            h5,p {
+                color: #fff;
+            }
+        }
+        .tm-social {
+            position: relative;
+            visibility: visible;
+            padding-top: 30px;
+            @include opacity(1);
+        }
+    }
+}
+ .team-meta {
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100px;
+     padding: 27px 0 26px;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: rgba(255, 255, 255, 0.9);
+     transition: all 0.4s;
+     h5 {
+         font-weight: 600;
+         margin-bottom: 5px;
+     }
+     p{
+         font-size: 12px;
+         margin-bottom: 0;
+     }
+     .tm-social {
+         padding-top: 0;
+         visibility: hidden;
+         position: absolute;
+         width: 100%;
+         left: 0;
+         @include opacity(0);
+         @include transition(all 0.4s);
+         a {
+             color: #fff;
+             width: 30px;
+             height: 30px;
+             padding-top: 5px;
+             margin: 0 5px;
+             font-size: 14px;
+             display: inline-block;
+             border-radius: 50%;
+             @include transition(all 0.4s);
+             &:hover {
+                 color: $primary_color;
+                 background: #fff;
+             }
+         }
+     }
+ }
