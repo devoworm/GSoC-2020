@@ -1,0 +1,74 @@
+/*---------------------
+   Helper CSS
+ -----------------------*/
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+    img {
+        margin-bottom: 15px;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 38px;
+        text-transform: uppercase;
+    }
+    p{
+        padding-top: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.spad {
+    padding-top: 110px;
+    padding-bottom: 105px;
+}
+
+.text-white {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    li,
+    a {
+        color: #fff;
+    }
+}
+
+
+/*---------------------
+  Commom elements
+-----------------------*/
+.site-btn {
+    display: inline-block;
+	font-size: 16px;
+    padding: 17px 25px;
+    min-width: 170px;
+	color: $white-color;
+	background: $primary-color;
+	line-height: 1;
+	letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    i {
+        font-size: 24px;
+        position: relative;
+        top: 5px;
+        margin-left: 4px;
+    }
+    &:hover {
+        color: $white_color;
+    }
+}
