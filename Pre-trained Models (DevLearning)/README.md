@@ -12,6 +12,17 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 
 <image src= "notebooks/embryo_segmentation/images/seg_result.png" >
   
+## Worm movement tracking and metadata extraction
+* This was built mostly using [openCV](https://opencv.org/) with tools like thresholding and contour finding algorithms. It tracks and segments worms from video feeds specifically from the [Open Worm Movement Database](http://movement.openworm.org/)
+
+<image src= "images/tracking.gif" width = "50%">
+
+* The cropped images of the worms were then used for time series analysis with the distance between the head and the tail as the parameter. The head and tail of the worm were also extracted using openCV. 
+
+<image src= "https://mayukhdeb.github.io/blog/post/images/may_24/skeleton.png" width = "50%">
+
+
+  
  ## Deep learning on cell position metadata of a C. elegans embryo
  * Training was done on the [EPIC datset](http://epic.gs.washington.edu/)
  * The model can predict the lineage name of a cell (or the cell name itself, depending on the time value) given it's position, size and time value. One can get a better understanding of the lineage tree of cells from the diagram given below:
