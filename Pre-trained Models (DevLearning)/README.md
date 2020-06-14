@@ -11,6 +11,22 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 * Interestingly enough, the model's output is less noisy than the augmented mask as seen below 
 
 <image src= "notebooks/embryo_segmentation/images/seg_result.png" >
+  
+ ## Deep learning on cell position metadata of a C. elegans embryo
+ * Training was done on the [EPIC datset](http://epic.gs.washington.edu/)
+ * The model can predict the lineage name of a cell (or the cell name itself, depending on the time value) given it's position, size and time value. One can get a better understanding of the lineage tree of cells from the diagram given below:
+ 
+ <image src= "notebooks/embryo_analysis/images/lineage_diagram.jpg" width = "30%">
+  
+ * The model can be re-trained on any embryo instance available on the dataset.
+ 
+ ## Principal component analysis on the metadata
+ PCA helped us visualise how cells descending from common ancestors are closer to each other in the lower dimensional space with the two principal components as the `x` and `y` axis.  
+ 
+  <image src= "notebooks/embryo_analysis/images/PCA.png" width = "80%">
+
+ 
+ 
 
 #### Blog posts:
 * [community bonding week 1](https://mayukhdeb.github.io/blog/post/gsoc-2020-may-17/)
