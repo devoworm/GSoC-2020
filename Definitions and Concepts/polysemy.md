@@ -1,1 +1,3 @@
 Polysemy means that a feature can have one of many meanings. For example, a single feature could have a series of possible meanings (given context) such as {c-cell, oval, left-anterior, neuron, node}. This can be done using labels derived from annotations, but we can also use more sophisticated labels derived from beliefs and cultural values. The biological equivalent to this would be role of a cell in a larger tissue or organism, or characterize membership in a gene expression profile {c-cell has a 45% membership in expression profile _y_} .
+
+Polysemy lecture notes [link]()
