@@ -1,3 +1,8 @@
+<P>
+  <IMG SRC="https://github.com/devoworm/GSoC-2020/blob/master/Definitions%20and%20Concepts/Color%20Palette/color-scheme-OREL.png">
+</P>
+
+
 Color  |  Red  |  Blue  |  Green  |
 -------|-------|--------|---------|
 Light Blue | 173 | 205 | 234 |
