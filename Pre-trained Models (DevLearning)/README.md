@@ -11,7 +11,9 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 * Interestingly enough, the model's output is less noisy than the augmented mask as seen below 
 
 <image src= "notebooks/embryo_segmentation/images/seg_result.png" >
-  
+
+
+
 ## [Worm movement tracking and metadata extraction](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/tree/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/worm_tracking/)
 * This was built mostly using [openCV](https://opencv.org/) with tools like thresholding and contour finding algorithms. It tracks and segments worms from video feeds specifically from the [Open Worm Movement Database](http://movement.openworm.org/)
 
@@ -29,7 +31,12 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
   
  * The model can be re-trained on any embryo instance available on the dataset.
  
- ## [Principal component analysis on the metadata](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/principal_component_analysis.ipynb)
+ ## [Time series prediction on worm metadata](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/worm_tracking/LSTM_time_series_prediction.ipynb)
+* Predicting the "curvature" of a worm's body from time series data containing the distance between the head and the tail of the worm's body. 
+* Note that the distance between the head and the tail is inversely proportional to the curvature. 
+<image src= "images/LSTM_pred.png" >
+ 
+ ## [Principal component analysis on worm embryo metadata](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/principal_component_analysis.ipynb)
  PCA helped us visualise how cells descending from common ancestors are closer to each other in the lower dimensional space with the two principal components as the `x` and `y` axis.  
  
  <image src= "notebooks/embryo_analysis/images/PCA.png" width = "80%">
