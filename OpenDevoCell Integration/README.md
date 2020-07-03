@@ -38,4 +38,9 @@ Dark Gray  | 143 | 158 | 133 |
 Purple     | 112 | 48 | 160 |
 Green      | 138 | 157 | 29 |
 
+## ODC: Introduction material / onboarding for new contributors / resource page.
+
+We have integrated the onboarding material for the new contributors and GSoC Aspirants for coming years so that, they can easily get what projects are going on in the community and under whose supervision. 
+For new contributors, join our Slack channel here [OpenWorm Slack channel](https://launchpass.com/openworm) and subcribe #devoworm and #devowormml.
+
 
