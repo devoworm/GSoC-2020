@@ -51,6 +51,6 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 * [coding period week 1](https://mayukhdeb.github.io/blog/post/gsoc-2020-june-7/)
 * [coding period week 2](https://mayukhdeb.github.io/blog/post/gsoc-2020-june-14/)
 * [coding period week 3](https://mayukhdeb.github.io/blog/post/gsoc-2020-june-21/)
-
+* [coding period week 5](https://mayukhdeb.github.io/blog/post/gsoc-2020-july-5/)
 
 
