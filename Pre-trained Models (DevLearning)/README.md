@@ -14,7 +14,9 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 
 ## [Extracting metadata from embryo time-lapses using the ResNet18](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/video_analysis/estimate_cell_family_population.ipynb)
 
-<image src= "images/resnet_preds_with_input.gif" width = "70%" >
+<image src= "images/resnet_preds_with_input.gif" width = "80%" >
+ 
+The dashed lines are the predictions and the solid lines are the real annotations made by researchers. The model's performance is almost at par with that of the researchers.The orange line shows the predictions made by the deep learning model, while the blue line shows the real populations of the "A" lineage of cells. 
 
 <image src= "images/resnet18_pipeline.jpg" width = "80%" >
 
