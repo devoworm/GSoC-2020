@@ -14,13 +14,15 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 
 ## [Extracting metadata from embryo time-lapses using the ResNet18](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/video_analysis/estimate_cell_family_population.ipynb)
 
+<image src= "images/resnet_preds_with_input.gif" width = "70%" >
+
 <image src= "images/resnet18_pipeline.jpg" width = "80%" >
 
 * We trained a ResNet18 architecture to determine the population of cells of various lineages within the C. elegans embryo. All videos were sourced from the [EPIC dataset](http://epic.gs.washington.edu/). 
 *  The prediction for each frame of the model is a 1 dimensional tensor which contains the populations of the lineages `['A', 'E', 'M', 'P', 'C', 'D', 'Z']` in that order
 * The model was trained on a reformatted version of the raw metadata, feel free to contact any of the members in this project for the reformatted data that was used for training. 
 
-<image src= "images/resnet18_preds.png" >
+
 
 
 ## [Worm movement tracking and metadata extraction](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/tree/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/worm_tracking/)
