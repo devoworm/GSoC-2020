@@ -97,9 +97,7 @@ class lineage_population_model():
             df= df.tail(df.shape[0] - ignore_first_n_frames)
 
 
-        print ("pre_drop : ", ignore_last_n_frames)
         if ignore_last_n_frames != 0:
-            print('dropped')
             df= df.head(df.shape[0] - ignore_last_n_frames)
 
 
@@ -117,10 +115,14 @@ class lineage_population_model():
         for label in labels:
             plt.plot(df[label].values, label = label)
 
+        plt.xlabel("frames")
+        plt.ylabel("population")
+
         if save_plot == True:
+            plt.legend()
+            
             plt.savefig(plot_name)
 
-       
         return plt
         
 

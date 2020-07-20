@@ -12,9 +12,16 @@ Loading a model instance to be used to estimate lineage populations of embryos f
 
 Making a prediction from an image
 
-3. `pred = (model.predict(image_path = "sample.png"))`
+3. `pred = model.predict(image_path = "sample.png")`
 
 Making predictions from a video and saving the predictions into a CSV file
 
-4. `results = model.predict_from_video(video_path = "sample_videos/20090309_F39B2_1_7_L1.mov", save_csv = True, csv_name = "foo.csv" )
-`
+4. `results = model.predict_from_video(video_path = "sample_videos/20090309_F39B2_1_7_L1.mov", save_csv = True, csv_name = "foo.csv")`
+
+Plotting the model's predictions
+
+5. `plot = model.create_population_plot_from_video(video_path = "sample_data/sample_videos/20090309_F39B2_1_7_L1.mov", save_plot= True, plot_name= "images/plot.png", ignore_last_n_frames= 30 )`
+
+And to show the plot with a grid overlay:
+
+6. `plot.show()`
