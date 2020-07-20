@@ -14,6 +14,7 @@ import numpy as np
 from collections import deque
 import pandas as pd
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 
 class lineage_population_model():   
     def __init__(self, mode = "cpu"):
@@ -59,12 +60,13 @@ class lineage_population_model():
 
         return pred_dict
 
-    def predict_from_video(self, video_path, csv_name, save_csv = False):
+    def predict_from_video(self, video_path, csv_name  = "foo.csv", save_csv = False, ignore_first_n_frames = 0, ignore_last_n_frames = 0):
 
         """
         input = video path <str>
         output = DataFrame <pandas.DataFrame>
         optionally saves csv file
+
         """
 
         vidObj = cv2.VideoCapture(video_path)   
@@ -79,7 +81,6 @@ class lineage_population_model():
             try:
                 image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
                 image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
-
                 tensor = self.transforms(image).unsqueeze(0)
                 pred = self.model(tensor).detach().cpu().numpy().reshape(1,-1)
                 pred_scaled = (self.scaler.inverse_transform(pred).flatten()).astype(np.uint8)
@@ -90,8 +91,38 @@ class lineage_population_model():
             count += 1
                 
         df = pd.DataFrame(preds, columns = ["A", "E", "M", "P", "C", "D", "Z"]) 
+
+
+        if ignore_first_n_frames != 0:
+            df= df.tail(df.shape[0] - ignore_first_n_frames)
+
+
+        print ("pre_drop : ", ignore_last_n_frames)
+        if ignore_last_n_frames != 0:
+            print('dropped')
+            df= df.head(df.shape[0] - ignore_last_n_frames)
+
+
         if save_csv == True:
+
             df.to_csv(csv_name, index = False)
 
-        return  df   
+        return  df
+        
+    def create_population_plot_from_video(self, video_path, save_plot = False, plot_name = "plot.png", ignore_first_n_frames = 0, ignore_last_n_frames = 0 ):
+        df = self.predict_from_video(video_path, ignore_first_n_frames = ignore_first_n_frames, ignore_last_n_frames = ignore_last_n_frames )  
+        
+        labels = ["A", "E", "M", "P", "C", "D", "Z"]
 
+        for label in labels:
+            plt.plot(df[label].values, label = label)
+
+        if save_plot == True:
+            plt.savefig(plot_name)
+
+       
+        return plt
+        
+
+        
+        
