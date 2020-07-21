@@ -40,6 +40,21 @@ class lineage_population_model():
 
     def predict(self, image_path):
 
+        """
+        input{
+            image path <str>
+        }
+
+        output{
+            dictionary containing the cell population values <dict>
+        }
+
+        Loads an image from image_path and converts it to grayscale, 
+        then passes it though the model and returns a dictionary 
+        with the scaled output (see self.scaler)
+
+        """
+
         image = cv2.imread(image_path, 0)
         image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
         tensor = self.transforms(image).unsqueeze(0)
@@ -63,9 +78,22 @@ class lineage_population_model():
     def predict_from_video(self, video_path, csv_name  = "foo.csv", save_csv = False, ignore_first_n_frames = 0, ignore_last_n_frames = 0):
 
         """
-        input = video path <str>
-        output = DataFrame <pandas.DataFrame>
-        optionally saves csv file
+        inputs{
+            video path <str> = path to video file 
+            csv_name <str> = filename to be used to save the predictions 
+            save_csv <bool> = set to True if you want to save the predictions into a CSV files
+            ignore_first_n_frames <int> = number of frames to drop in the start of the video 
+            ignore_last_n_frames <int> = number of frames to drop in the end of the video 
+        }
+
+
+        output{
+            DataFrame containing all the preds with the corresponding column name <pandas.DataFrame>
+        }
+        
+        Splits a video from video_path into frames and passes the 
+        frames through the model for predictions. Saves all the predictions
+        into a pandas.DataFrame which can be optionally saved as a CSV file.
 
         """
 
@@ -106,8 +134,27 @@ class lineage_population_model():
             df.to_csv(csv_name, index = False)
 
         return  df
+
+
         
     def create_population_plot_from_video(self, video_path, save_plot = False, plot_name = "plot.png", ignore_first_n_frames = 0, ignore_last_n_frames = 0 ):
+
+        """
+        inputs{
+            video_path <str> = path to video file 
+            save_plot <bool> = set to True to save the plot as an image file 
+            plot_name <str> = filename of the plot image to be saved 
+            ignore_first_n_frames <int> = number of frames to drop in the start of the video 
+            ignore_last_n_frames <int> = number of frames to drop in the end of the video 
+        }
+
+        outputs{
+            plot object which can be customized further <matplotlib.pyplot>
+        }
+
+        plots all the predictions from a video into a matplotlib.pyplot 
+        
+        """
         df = self.predict_from_video(video_path, ignore_first_n_frames = ignore_first_n_frames, ignore_last_n_frames = ignore_last_n_frames )  
         
         labels = ["A", "E", "M", "P", "C", "D", "Z"]
