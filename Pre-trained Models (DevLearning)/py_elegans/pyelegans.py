@@ -171,6 +171,83 @@ class lineage_population_model():
             plt.savefig(plot_name)
 
         return plt
+
+
+
+"""
+GAN to generate images of embryos 
+"""
+
+
+class Generator(nn.Module):
+    def __init__(self, ngpu, ngf, nz, nc):
+        super().__init__()
+        self.ngpu = ngpu
+        self.main = nn.Sequential(
+            # input is Z, going into a convolution
+            nn.ConvTranspose2d( nz, ngf * 8, 4, 1, 0, bias=False),
+            nn.BatchNorm2d(ngf * 8),
+            nn.ReLU(True),
+            # state size. (ngf*8) x 4 x 4
+            nn.ConvTranspose2d(ngf * 8, ngf * 4, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(ngf * 4),
+            nn.ReLU(True),
+            # state size. (ngf*4) x 8 x 8
+            nn.ConvTranspose2d( ngf * 4, ngf * 2, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(ngf * 2),
+            nn.ReLU(True),
+            # state size. (ngf*2) x 16 x 16
+            nn.ConvTranspose2d( ngf * 2, ngf, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(ngf),
+            nn.ReLU(True),
+            # state size. (ngf) x 32 x 32
+
+            nn.ConvTranspose2d( ngf, ngf, 4, 2, 1, bias=False),  ## added custom stuff here
+            nn.BatchNorm2d(ngf),
+            nn.ReLU(True),
+            # state size. (ngf) x 64 x 64
+
+            nn.ConvTranspose2d( ngf, nc, 4, 2, 1, bias=False),
+            nn.Tanh()
+            # state size. (nc) x 128 x 128
+        )
+
+    def forward(self, input):
+        return self.main(input)
+
+
+class embryo_generator_model():   
+    def __init__(self, mode = "cpu"):
+
+        self.ngf = 128 ## generated image size 
+        self.nz = 128
+        self.nc = 1
+
+        
+        self.mode = mode
+        if self.mode=="cpu":
+            self.ngpu = 0
+            self.generator= Generator(self.ngpu, self.ngf, self.nz, self.nc)
+            self.generator.load_state_dict(torch.load("models/embryo_generator.pt", map_location= "cpu"))
+
+        else:
+            self.ngpu = 1
+            self.generator= Generator(self.ngpu, self.ngf, self.nz, self.nc)
+            self.generator.load_state_dict(torch.load("models/embryo_generator.pt"))
+
+
+    def generate(self, image_size = (700,500)):
+        with torch.no_grad():
+            noise = torch.randn([1,128,1,1])
+            if self.mode != "cpu":
+                noise = noise.cuda()
+            im = self.generator(noise)[0][0].cpu().detach().numpy()
+        im = cv2.resize(im, image_size)
+        return im
+        
+
+
+
         
 
         
