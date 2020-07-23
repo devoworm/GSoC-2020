@@ -26,7 +26,7 @@ The dashed lines are the predictions and the solid lines are the real annotation
 
 
 ## [Generative Adversarial networks making "fake" embryo images](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/generative_models/fake_embryo_images_with_GANs.ipynb)
-<img src = "https://raw.githubusercontent.com/devoworm/GSoC-2020/master/Pre-trained%20Models%20(DevLearning)/images/generated_embryos_compressed.gif" width = "500">
+<img src = "https://raw.githubusercontent.com/devoworm/GSoC-2020/master/Pre-trained%20Models%20(DevLearning)/images/generated_embryos_3.gif" width = "500">
 
 
 
