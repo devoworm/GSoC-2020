@@ -24,32 +24,10 @@ plt.show()
 ```
 
 ## Bulk generation using the GAN
+* generating n images and saving them into `foldername` with a user set size 
 
-* importing the libraries and the model
 ```python
-from pyelegans import Generator, embryo_generator_model
-import matplotlib.pyplot as plt
-import cv2
-import os
-```
-
-* setting the number of images and the foldername, and initiating the model
-```python
-
-num_images = 3
-save_foldername = "gen_images"
-
-if os.path.isdir(save_foldername) == False:
-    os.mkdir(save_foldername)
-
-generator = embryo_generator_model()
-```
-* generating images
-```python
-for i in range(num_images):
-    filename = save_foldername + "/" + str(i) + ".jpg"
-    gen_image = generator.generate()  ## 2d numpy array 
-    cv2.imwrite(filename, gen_image)
+generator.generate_n_images(n = 5, foldername= "generated_images", image_size= (700,500))
 ```
 
 ---
