@@ -7,6 +7,7 @@ from torchvision.transforms import ToTensor
 from torchvision.transforms import ToPILImage
 import torchvision.models as models
 
+import os
 import cv2
 from PIL import Image
 import joblib
@@ -246,11 +247,26 @@ class embryo_generator_model():
         im = 255 - cv2.convertScaleAbs(im, alpha=(255.0))   ## temporary fix against inverted images 
 
         return im
+
+
+    def generate_n_images(self, n = 3, foldername = "generated_images", image_size = (700,500)):
+
+        if os.path.isdir(foldername) == False:
+            os.mkdir(foldername)
+
         
+        for i in range(n):
+            filename = foldername + "/" + str(i) + ".jpg"
+            gen_image = self.generate()  ## 2d numpy array 
+            cv2.imwrite(filename, gen_image)
+
+        print ("Saved ", n, " images in", foldername)
+                        
+                    
 
 
 
-        
+                    
 
-        
-        
+                    
+                    

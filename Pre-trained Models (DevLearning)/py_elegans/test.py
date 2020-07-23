@@ -17,3 +17,6 @@ generator = embryo_generator_model()
 gen_image = generator.generate()  ## 2d numpy array 
 plt.imshow(gen_image)
 plt.show()
+
+generator.generate_n_images(n = 5, foldername= "generated_images", image_size= (700,500))
+
