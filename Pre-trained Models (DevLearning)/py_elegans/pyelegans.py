@@ -243,6 +243,8 @@ class embryo_generator_model():
                 noise = noise.cuda()
             im = self.generator(noise)[0][0].cpu().detach().numpy()
         im = cv2.resize(im, image_size)
+        im = 255 - cv2.convertScaleAbs(im, alpha=(255.0))   ## temporary fix against inverted images 
+
         return im
         
 
