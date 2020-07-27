@@ -18,7 +18,6 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 <image src= "images/resnet_preds_with_input.gif" width = "80%" >
  
 The dashed lines are the predictions and the solid lines are the real annotations made by researchers. The model's performance is almost at par with that of the researchers.The orange line shows the predictions made by the deep learning model, while the blue line shows the real populations of the "A" lineage of cells. 
-https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/images/model_vs_GAN.gif
 <image src= "images/resnet18_pipeline.jpg" width = "80%" >
 
 * We trained a ResNet18 architecture to determine the population of cells of various lineages within the C. elegans embryo. All videos were sourced from the [EPIC dataset](http://epic.gs.washington.edu/). 
