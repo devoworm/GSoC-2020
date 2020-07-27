@@ -4,6 +4,7 @@
 
 Pre-trained deep neural networks like ResNet are being used in various industries where they help make our lives easier. But these kinds of models are not yet being used for microscopic images on a large scale. With the right model architecture and training approaches, it is possible to get pre-trained models which would help in the research efforts of many. These models, combined with a GUI would act as a community tool which would help speed up the classification/segmentation of thousands of microscopic images and gain inferences from them.
 
+
 ## [Deep segmentation model to extract nuclei from a C.elegans embryo](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/tree/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_segmentation/)
 * This model was trained on the [WormImage dataset](https://www.wormimage.org/) with manually labelled masks. You can download the segmentation datset [from this link](https://github.com/devoworm/GSoC-2020/raw/master/Pre-trained%20Models%20(DevLearning)/notebooks/embryo_segmentation/data/image_data.tar.xz)  
 * The architeture is built on a [resNet18 backbone](https://www.researchgate.net/figure/ResNet-18-Architecture_tbl1_322476121).
@@ -17,13 +18,15 @@ Pre-trained deep neural networks like ResNet are being used in various industrie
 <image src= "images/resnet_preds_with_input.gif" width = "80%" >
  
 The dashed lines are the predictions and the solid lines are the real annotations made by researchers. The model's performance is almost at par with that of the researchers.The orange line shows the predictions made by the deep learning model, while the blue line shows the real populations of the "A" lineage of cells. 
-
+https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/images/model_vs_GAN.gif
 <image src= "images/resnet18_pipeline.jpg" width = "80%" >
 
 * We trained a ResNet18 architecture to determine the population of cells of various lineages within the C. elegans embryo. All videos were sourced from the [EPIC dataset](http://epic.gs.washington.edu/). 
 *  The prediction for each frame of the model is a 1 dimensional tensor which contains the populations of the lineages `['A', 'E', 'M', 'P', 'C', 'D', 'Z']` in that order
 * The model was trained on a reformatted version of the raw metadata, feel free to contact any of the members in this project for the reformatted data that was used for training. 
 
+## [Trained model making predictions on generated images from a GAN](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/py_elegans/synthetic_preds_on_GAN.py)
+<img src= "https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/images/model_vs_GAN.gif">
 
 ## [Generative Adversarial networks making "fake" embryo images](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/generative_models/fake_embryo_images_with_GANs.ipynb)
 <img src = "https://raw.githubusercontent.com/devoworm/GSoC-2020/master/Pre-trained%20Models%20(DevLearning)/images/generated_embryos_3.gif" width = "500">
