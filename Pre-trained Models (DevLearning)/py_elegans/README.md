@@ -51,12 +51,12 @@ pred = model.predict(image_path = "sample.png")
 
 * Making predictions from a video and saving the predictions into a CSV file
 ```python
-results = model.predict_from_video(video_path = "sample_videos/20090309_F39B2_1_7_L1.mov", save_csv = True, csv_name = "foo.csv")
+results = model.predict_from_video(video_path = "sample_videos/20071217_ceh-432x3.mov", save_csv = True, csv_name = "foo.csv")
 ```
 
 * Plotting the model's predictions
 ```python
-plot = model.create_population_plot_from_video(video_path = "sample_data/sample_videos/20090309_F39B2_1_7_L1.mov", save_plot= True, plot_name= "images/plot.png", ignore_last_n_frames= 30 )
+plot = model.create_population_plot_from_video(video_path = "sample_data/sample_videos/20071217_ceh-432x3.mov", save_plot= True, plot_name= "images/plot.png", ignore_last_n_frames= 30 )
 plot.show()
 ```
 This would show a plot like:
