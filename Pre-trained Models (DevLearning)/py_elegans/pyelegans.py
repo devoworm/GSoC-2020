@@ -9,6 +9,7 @@ import torchvision.models as models
 
 import os
 import cv2
+from tqdm import tqdm
 from PIL import Image
 import joblib
 import numpy as np
@@ -96,10 +97,15 @@ class lineage_population_model():
         frames through the model for predictions. Saves all the predictions
         into a pandas.DataFrame which can be optionally saved as a CSV file.
 
+        The model was trained to make predictions upto the 
+        stage where the population of "A" lineage is 250
+
         """
+        A_population_upper_limit = 250
 
         vidObj = cv2.VideoCapture(video_path)   
         success = 1
+        images = deque()
         count = 0
 
         preds = deque()
@@ -110,17 +116,20 @@ class lineage_population_model():
             try:
                 image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
                 image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
-                tensor = self.transforms(image).unsqueeze(0)
-                pred = self.model(tensor).detach().cpu().numpy().reshape(1,-1)
-                pred_scaled = (self.scaler.inverse_transform(pred).flatten()).astype(np.uint8)
-                preds.append(pred_scaled)
+                images.append(image)
                 
             except:
                 print("skipped possible corrupt frame number : ", count)
-            count += 1
-                
-        df = pd.DataFrame(preds, columns = ["A", "E", "M", "P", "C", "D", "Z"]) 
+            count += 1 
 
+        for i in tqdm(range(len(images)), desc='Predicting from video file:  :'):
+            tensor = self.transforms(images[i]).unsqueeze(0)
+            pred = self.model(tensor).detach().cpu().numpy().reshape(1,-1)
+            pred_scaled = (self.scaler.inverse_transform(pred).flatten()).astype(np.uint8)
+            preds.append(pred_scaled)
+
+       
+        df = pd.DataFrame(preds, columns = ["A", "E", "M", "P", "C", "D", "Z"]) 
 
         if ignore_first_n_frames != 0:
             df= df.tail(df.shape[0] - ignore_first_n_frames)
@@ -129,6 +138,13 @@ class lineage_population_model():
         if ignore_last_n_frames != 0:
             df= df.head(df.shape[0] - ignore_last_n_frames)
 
+        a_values = df["A"].values
+
+        for limit in range(len(a_values)):  ## show preds upto 250 A cells 
+            if a_values[limit]>=250:
+                break
+        
+        df = df.head(limit)
 
         if save_csv == True:
 
@@ -255,18 +271,9 @@ class embryo_generator_model():
             os.mkdir(foldername)
 
         
-        for i in range(n):
+        for i in tqdm(range(n), desc = "generating images :"):
             filename = foldername + "/" + str(i) + ".jpg"
             gen_image = self.generate()  ## 2d numpy array 
             cv2.imwrite(filename, gen_image)
 
         print ("Saved ", n, " images in", foldername)
-                        
-                    
-
-
-
-                    
-
-                    
-                    
