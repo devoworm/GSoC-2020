@@ -61,4 +61,4 @@ plot.show()
 ```
 This would show a plot like:
 
-<img src= "sample_preds/plot.png">
+<img src= "sample_preds/plot.png" width = "40%">
