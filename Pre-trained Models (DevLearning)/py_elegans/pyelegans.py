@@ -18,6 +18,10 @@ import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
+"""
+ResNet18 to determine population of cells in an embryo
+"""
+
 class lineage_population_model():   
     def __init__(self, mode = "cpu"):
         self.mode = mode
@@ -147,7 +151,6 @@ class lineage_population_model():
         df = df.head(limit)
 
         if save_csv == True:
-
             df.to_csv(csv_name, index = False)
 
         return  df
@@ -236,6 +239,15 @@ class Generator(nn.Module):
 class embryo_generator_model():   
     def __init__(self, mode = "cpu"):
 
+        """
+        ngf = size of output image of the GAN 
+        nz = size of latent space noise (latent vector)
+        nc = number of color channels of the output image
+
+        Do not tweak these unless you're changing the Generator() with a new model with a different architecture. 
+    
+        """
+
         self.ngf = 128 ## generated image size 
         self.nz = 128
         self.nc = 1
@@ -254,6 +266,18 @@ class embryo_generator_model():
 
 
     def generate(self, image_size = (700,500)):
+
+        """
+        inputs{
+            image_size <tuple> = (width,height of the generated image)
+        }
+        outputs{
+            1 channel image as an <np.array> 
+        }
+        The native size of the GAN's output is 128*128, and then it resizes the 
+        generated image to the desired size. 
+
+        """
         with torch.no_grad():
             noise = torch.randn([1,128,1,1])
             if self.mode != "cpu":
@@ -266,6 +290,19 @@ class embryo_generator_model():
 
 
     def generate_n_images(self, n = 3, foldername = "generated_images", image_size = (700,500)):
+        """
+        inputs{
+            n <int> = number of images to generate
+            foldername <str> = name of the folder where the images whould be saved. 
+            The function automatically generates a folder if it doesn't exist 
+        }
+        outputs{
+            None
+        }
+        
+        This is an extension of the generator.generate() function for generating multiple images at once and saving them into a folder. 
+
+        """
 
         if os.path.isdir(foldername) == False:
             os.mkdir(foldername)
