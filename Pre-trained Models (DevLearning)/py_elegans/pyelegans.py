@@ -193,11 +193,9 @@ class lineage_population_model():
         return plt
 
 
-
 """
 GAN to generate images of embryos 
 """
-
 
 class Generator(nn.Module):
     def __init__(self, ngpu, ngf, nz, nc):
