@@ -17,6 +17,13 @@ from collections import deque
 import pandas as pd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+import segmentation_models_pytorch as smp
+import warnings
+warnings.filterwarnings("ignore") 
+
+
+
+
 
 """
 ResNet18 to determine population of cells in an embryo
@@ -312,3 +319,47 @@ class embryo_generator_model():
             cv2.imwrite(filename, gen_image)
 
         print ("Saved ", n, " images in", foldername)
+
+
+
+"""
+3d segmentation model for C elegans embryo
+"""
+
+
+class embryo_segmentor(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.ENCODER = 'resnet18'
+        self.ENCODER_WEIGHTS = 'imagenet'
+        self.CLASSES = ["nucleus"]
+        self.ACTIVATION = 'sigmoid'
+        self.DEVICE = 'cpu'
+        self.in_channels = 1
+
+        self.model = smp.FPN(
+                encoder_name= self.ENCODER, 
+                encoder_weights= self.ENCODER_WEIGHTS, 
+                classes=len(self.CLASSES), 
+                activation= self.ACTIVATION,
+                in_channels = self.in_channels 
+            )
+        # self.preprocessing_fn = smp.encoders.get_preprocessing_fn(self.ENCODER, self.ENCODER_WEIGHTS)
+
+        self.model = torch.load("models/3d_segmentation_model.pth", map_location= "cpu")
+        self.model.eval()
+
+        self.mini_transform = transforms.Compose([
+                                     transforms.ToPILImage(),
+                                     transforms.Resize((256,256), interpolation = Image.NEAREST),
+                                     transforms.ToTensor(),
+                                    ])
+
+
+    def predict(self, image_path, pred_size = (350,250)):
+        im = cv2.imread(image_path,0)
+        tensor = self.mini_transform(im).unsqueeze(0)
+        res = self.model(tensor).detach().cpu().numpy()[0][0]
+
+        res = cv2.resize(res,pred_size)
+        return res

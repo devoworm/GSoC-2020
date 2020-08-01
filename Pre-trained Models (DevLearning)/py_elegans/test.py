@@ -1,5 +1,6 @@
 from pyelegans import lineage_population_model
 from pyelegans import Generator, embryo_generator_model
+from pyelegans import embryo_segmentor
 import matplotlib.pyplot as plt
 
 model = lineage_population_model(mode = "cpu")
@@ -20,3 +21,9 @@ plt.show()
 
 generator.generate_n_images(n = 5, foldername= "generated_images", image_size= (700,500))
 
+segmentor = embryo_segmentor()
+
+seg_pred = segmentor.predict(image_path = "sample_data/seg_sample.jpg")
+
+plt.imshow(seg_pred)
+plt.show()
