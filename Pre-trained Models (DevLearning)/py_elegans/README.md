@@ -11,7 +11,7 @@
 
 <img src = "https://raw.githubusercontent.com/devoworm/GSoC-2020/master/Pre-trained%20Models%20(DevLearning)/images/3d_segmentation_preds.gif" width = "40%">
 
-* importing the model
+* Importing the model
 ```python
 from pyelegans import embryo_segmentor
 segmentor = embryo_segmentor()
@@ -23,13 +23,13 @@ segmentor = embryo_segmentor()
 seg_pred = segmentor.predict(image_path = "sample_data/seg_sample.jpg")
 ```
 
-* viewing the result
+* Viewing the result
 ```python
 plt.imshow(seg_pred)
 plt.show()
 ```
 
-* Running the model on a video and saving the frames 
+* Running the model on a video and saving the predictions into a folder 
 ```python
 segmentor.predict_from_video(video_path = "sample_data/sample_videos/seg_sample.mov", pred_size = (350,250), save_folder = "preds")
 ```
@@ -56,7 +56,7 @@ plt.show()
 ```
 
 ## Bulk generation using the GAN
-* generating n images and saving them into `foldername` with a user set size 
+* Generating n images and saving them into `foldername` with a user set size 
 
 ```python
 generator.generate_n_images(n = 5, foldername= "generated_images", image_size= (700,500))
