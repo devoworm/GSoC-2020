@@ -27,3 +27,5 @@ seg_pred = segmentor.predict(image_path = "sample_data/seg_sample.jpg")
 
 plt.imshow(seg_pred)
 plt.show()
+
+segmentor.predict_from_video(video_path = "sample_data/sample_videos/seg_sample.mov")

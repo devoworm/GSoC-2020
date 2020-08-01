@@ -344,7 +344,6 @@ class embryo_segmentor(nn.Module):
                 activation= self.ACTIVATION,
                 in_channels = self.in_channels 
             )
-        # self.preprocessing_fn = smp.encoders.get_preprocessing_fn(self.ENCODER, self.ENCODER_WEIGHTS)
 
         self.model = torch.load("models/3d_segmentation_model.pth", map_location= "cpu")
         self.model.eval()
@@ -360,6 +359,36 @@ class embryo_segmentor(nn.Module):
         im = cv2.imread(image_path,0)
         tensor = self.mini_transform(im).unsqueeze(0)
         res = self.model(tensor).detach().cpu().numpy()[0][0]
-
         res = cv2.resize(res,pred_size)
         return res
+
+    def predict_from_video(self, video_path, pred_size = (350,250), save_folder = "preds"):
+        vidObj = cv2.VideoCapture(video_path)   
+        success = 1
+        images = deque()
+        count = 0
+
+        while success: 
+            success, image = vidObj.read() 
+            
+            try:
+                image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+                images.append(image)
+                 
+            except:
+                print("skipped possible corrupt frame number : ", count)
+            count += 1 
+        
+        if os.path.isdir(save_folder) == False:
+            os.mkdir(save_folder)
+
+        for i in tqdm(range(len(images)), desc = "saving predictions: "):
+            save_name = save_folder + "/" + str(i) + ".jpg"
+            tensor = self.mini_transform(images[i]).unsqueeze(0)
+            res = self.model(tensor).detach().cpu().numpy()[0][0]
+            res = cv2.resize(res,pred_size)
+            cv2.imwrite(save_name, res*255)
+            
+
+        return os.listdir(save_folder)
+            
