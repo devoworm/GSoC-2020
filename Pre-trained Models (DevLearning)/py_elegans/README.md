@@ -1,11 +1,12 @@
-# pyelegans 
+# pyelegans is now [devolearn](https://github.com/DevoLearn/devolearn)
+
 
 <!---
 
 <img src = "images/py_elegans_vis.png">
 --->
 
-> Still under construction
+
 
 # Segmenting the C. elegans embryo 
 
