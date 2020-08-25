@@ -2,8 +2,29 @@
 
 [![Binder](https://camo.githubusercontent.com/bfeb5472ee3df9b7c63ea3b260dc0c679be90b97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656e6465722d6e627669657765722d6f72616e67652e7376673f636f6c6f72423d66333736323626636f6c6f72413d346434643464)](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/tree/master/Pre-trained%20Models%20(DevLearning))
 
-Pre-trained deep neural networks like ResNet are being used in various industries where they help make our lives easier. But these kinds of models are not yet being used for microscopic images on a large scale. With the right model architecture and training approaches, it is possible to get pre-trained models which would help in the research efforts of many. These models, combined with a GUI would act as a community tool which would help speed up the classification/segmentation of thousands of microscopic images and gain inferences from them.
+## Contents 
+ * [Hello devolearn](hello-devolearn)
+ * [Deep segmentation model to segment the C. elegans embryo](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#deep-segmentation-model-to-segment-the-c-elegans-embryo)
+ * [Another segmentation model to extract features from a C.elegans embryo](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#another-segmentation-model-to-extract-features-from-a-celegans-embryo)
+ * [Extracting metadata from embryo time-lapses using the ResNet18](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#extracting-metadata-from-embryo-time-lapses-using-the-resnet18)
+ * [Trained model making predictions on generated images from a GAN](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#trained-model-making-predictions-on-generated-images-from-a-gan)
+ * [Generative Adversarial networks making "fake" embryo images](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#generative-adversarial-networks-making-fake-embryo-images)
+ * [Worm movement tracking and metadata extraction](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#worm-movement-tracking-and-metadata-extraction)
+ * [Deep learning on cell position metadata of a C. elegans embryo](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#deep-learning-on-cell-position-metadata-of-a-c-elegans-embryo)
+ * [Time series prediction on worm metadata](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#time-series-prediction-on-worm-metadata)
+ * [Principal component analysis on worm embryo metadata](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#principal-component-analysis-on-worm-embryo-metadata)
+ 
 
+Pre-trained deep neural networks like ResNet are being used in various industries where they help make our lives easier. But these kinds of models are not yet being used for microscopic images on a large scale. With the right model architecture and training approaches, it is possible to get pre-trained models which would help in the research efforts of many. These models would help accelerate data driven research in developmental biology. 
+
+## [Hello devolearn](https://github.com/DevoLearn/devolearn) 
+
+<img src = "https://raw.githubusercontent.com/DevoLearn/devolearn/master/images/banner_1.jpg" width = "70%">
+
+Devolearn is a python library that helps accelerate data driven research on the C. elegans embryo by automating the process of collecting metadata from microscopic images/videos with  the help of deep learning models. It's been already released on PyPI as `pip install devolearn`. 
+
+* [devolearn main repo](https://github.com/DevoLearn/devolearn)
+* [devolearn quickstart notebook](https://colab.research.google.com/drive/1N0jKNYdhDUfCYdx1bA4UI7v8NQ1qPAo0?usp=sharing) on colab.  
 
 ## [Deep segmentation model to segment the C. elegans embryo](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/3d_embryo_segmentation/train_segmentation_model.ipynb)
 
