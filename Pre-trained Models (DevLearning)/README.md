@@ -84,6 +84,7 @@ The dashed lines are the predictions and the solid lines are the real annotation
 * [coding period week 9](https://mayukhdeb.github.io/blog/post/gsoc-2020-aug-2/)
 * [coding period week 10](https://mayukhdeb.github.io/blog/post/gsoc-2020-august-9/)
 * [coding period week 11](https://mayukhdeb.github.io/blog/post/gsoc-2020-august-16/)
+* [coding period week 12](https://mayukhdeb.github.io/blog/post/gsoc-2020-august-23/)
 
 
 
