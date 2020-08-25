@@ -3,7 +3,7 @@
 [![Binder](https://camo.githubusercontent.com/bfeb5472ee3df9b7c63ea3b260dc0c679be90b97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656e6465722d6e627669657765722d6f72616e67652e7376673f636f6c6f72423d66333736323626636f6c6f72413d346434643464)](https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/tree/master/Pre-trained%20Models%20(DevLearning))
 
 ## Contents 
- * [Hello devolearn](hello-devolearn)
+ * [Hello devolearn](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#hello-devolearn)
  * [Deep segmentation model to segment the C. elegans embryo](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#deep-segmentation-model-to-segment-the-c-elegans-embryo)
  * [Another segmentation model to extract features from a C.elegans embryo](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#another-segmentation-model-to-extract-features-from-a-celegans-embryo)
  * [Extracting metadata from embryo time-lapses using the ResNet18](https://github.com/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20(DevLearning)/README.md#extracting-metadata-from-embryo-time-lapses-using-the-resnet18)
