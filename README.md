@@ -17,3 +17,5 @@ Community Period starts May 5! Join us at our [group meeting](https://tiny.cc/De
 For more casual interactions, join us for our [weekly Hackathon/Coffee Hour](https://meet.google.com/yvy-uxsw-uno), Fridays at 4pm UTC.
 
 Join us for OpenWorm Office Hours in the #officehours channel of [OpenWorm Slack](http://openworm.slack.com), May 20th at 3pm UTC!
+
+Thanks to Ujjwal Singh and Mayukh Deb for sucessful completion of their projects. These projects are now live in the form of [DevoLearn](https://pypi.org/project/devolearn/) and [DevoWormAI](https://devoworm.github.io/DevoWormAi/index.html).
